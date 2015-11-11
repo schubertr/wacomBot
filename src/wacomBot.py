@@ -5,11 +5,9 @@ Created on Oct 14, 2015
 '''
 
 import praw
-import pdb
 import re
 import os
 import obot
-from config_bot import *
 
 def countComments(flat_comments): #function to count number of comments on a post
     count = 0
