@@ -1,13 +1,14 @@
 '''
 Created on Oct 14, 2015
 
-@author: /u/stirus
+@author: Ryan
 '''
 
 import praw
 import pdb
 import re
 import os
+import obot
 from config_bot import *
 
 def countComments(flat_comments): #function to count number of comments on a post
@@ -16,9 +17,7 @@ def countComments(flat_comments): #function to count number of comments on a pos
         count += 1
     return count
 
-user_agent = ("wacomMod 1.0")
-r = praw.Reddit(user_agent=user_agent)
-r.login(REDDIT_USERNAME, REDDIT_PASS, disable_warning=True) #logs in. I will update to new method when I figure out how
+r = obot.login() #logins to /u/wacomBot using OAuth2
 
 safe_word = "do not delete" #put the phrase OP can comment to have the bot not delete the post here
 
